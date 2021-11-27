@@ -1,0 +1,108 @@
+<div class="content">
+  <table>
+    <tr>
+      <td><img src="C:\Users\Acer\Downloads\Logo.jpg" width="200" hight="300"></td>
+      <td><h1>Employee Management System</h1></td>
+    </tr>
+  </table>
+  <hr>
+    <h2>View Employee Details</h2>
+    <br>
+    <table id="emp" border="1">
+      <thead>
+        <tr>
+          <th>Emp Id</th>
+          <th>Emp Name</th>
+          <th>Emp Contact no </th>
+          <th>Emp Address</th>
+          <th>Emp E-maill</th>
+          <th>Sexuality</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of emp">
+          <td>{{emp.EmpId}}</td>
+          <td>{{emp.EmpName}}</td>
+          <td>{{emp.EmpCno}}</td>
+          <td>{{emp.EmpAdd}}</td>
+          <td>{{emp.EmpMail}}</td>
+          <td>{{emp.Sexuality}}</td>
+          <td>
+            <button class="openButton" onclick="openForm()" (click)="Emp(emp.id)">Edit Info</button>
+            <button class="deleteBtn" (click)="delEmp(emp.id)">Delete</button>
+          </td>
+       </tr>
+    </tbody>
+  </table>
+</div>
+  
+
+
+
+<div class="loginPopup">
+  <div class="formPopup" id="popupForm">
+    <form  class="formContainer" [formGroup]="editEmp" (ngSubmit)="upEmp()">
+      <span class="btn_cancel" onclick="closeForm()">&times;</span>
+      <H1 style="text-align: center;">Update Employee Details</H1>
+      <hr><br>
+        <table id="opt">
+    <tr>
+      <td>Employee ID:</td>
+        <td><input id="ipt" type="text" formControlName="EmpId" required=""></td>
+      </tr>
+      <tr>
+        <td><br></td>
+      </tr>
+      <tr>
+        <td>Employee Name:</td>
+        <td><input id="ipt" type="text" formControlName="EmpName" required=""></td>
+      </tr>
+      <tr>
+        <td><br></td>
+      </tr>
+      <tr>
+        <td>Employee Contact No:</td>
+        <td><input id="ipt" type="text" formControlName="EmpCno"></td>
+      </tr>
+      <tr>
+        <td><br></td>
+      </tr>
+      <tr>
+        <td>Employee Address:</td>
+          <td><input id="ipt" type="text" formControlName="EmpAdd"></td>
+        </tr>
+        <tr>
+          <td><br></td>
+        </tr>
+        <tr>
+          <td>Employee E-mail:</td>
+          <td><input id="ipt" type="text" formControlName="EmpMail" required=""></td>
+        </tr>
+        <tr>
+          <td><br></td>
+        </tr>
+        <tr>
+          <td>Sexuality:</td>
+          <td>
+            Male <input type="radio" formControlName="Sexuality" value="Male"/>
+            Female <input type="radio" formControlName="Sexuality" value="Female"/>
+          </td>
+        </tr>
+        <tr>
+          <td><br></td>
+        </tr>
+        <tr>   
+        <tr>
+          <td><br></td>
+        </tr>
+      </table>
+      <br>
+        <div>
+          <input class="submit" type="submit" value="Save Changes" />
+          <input class="reset" type="reset" value="reset" />
+        </div>
+    </form>
+  </div>
+</div>
+<router-outlet></router-outlet>

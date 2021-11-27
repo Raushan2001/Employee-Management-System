@@ -1,0 +1,70 @@
+<div class="content">
+  <table>
+    <tr>
+      <td><img src="C:\Users\Acer\Downloads\Logo.jpg" width="200" hight="300"></td>
+      <td><h1>Employee Management System</h1>
+    </tr>
+  </table>
+  <hr>
+  <h2>Add Employee Details</h2>
+  <span *ngIf="submitted && createEmp.invalid" style="color: red;">Oops! Something Went Wrong</span>
+  <form [formGroup]="createEmp" (ngSubmit)="addEmp()"><br>
+    <table id="opt">
+      <tr>
+        <td>Employee ID:</td>
+          <td><input id="ipt" type="text" formControlName="EmpId" required=""></td>
+        </tr>
+        <tr>
+          <td><br></td>
+        </tr>
+        <tr>
+          <td>Employee Name:</td>
+          <td><input id="ipt" type="text" formControlName="EmpName" required=""></td>
+        </tr>
+        <tr>
+          <td><br></td>
+        </tr>
+        <tr>
+          <td>Employee Contact No:</td>
+          <td><input id="ipt" type="text" formControlName="EmpCno"></td>
+        </tr>
+        <tr>
+          <td><br></td>
+        </tr>
+        <tr>
+          <td>Employee Address:</td>
+            <td><input id="ipt" type="text" formControlName="EmpAdd"></td>
+          </tr>
+          <tr>
+            <td><br></td>
+          </tr>
+          <tr>
+            <td>Employee E-mail:</td>
+            <td><input id="ipt" type="text" formControlName="EmpMail" required=""></td>
+          </tr>
+          <tr>
+            <td><br></td>
+          </tr>
+          <tr>
+            <td>Sexuality:</td>
+            <td>
+              Male <input type="radio" formControlName="Sexuality" value="Male"/>
+              Female <input type="radio" formControlName="Sexuality" value="Female"/>
+            </td>
+          </tr>
+          <tr>
+            <td><br></td>
+          </tr>
+          <tr>   
+          <tr>
+            <td><br></td>
+          </tr>
+        </table>
+        <br>
+          <div>
+            <input class="submit" type="submit" value="Submit" />
+            <input class="reset" type="reset" value="Cancel" />
+          </div>
+      </form>
+  
+  </div>
